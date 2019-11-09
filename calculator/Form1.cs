@@ -16,5 +16,36 @@ namespace calculator
         {
             InitializeComponent();
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonClick(object sender, EventArgs e)
+        {
+            if(result.Text == "0")
+            {
+                result.Clear();
+            }
+
+            Button b = (Button)sender;
+            result.Text = result.Text + b.Text;
+        }
+
+        private void ButtonC_Click(object sender, EventArgs e)
+        {
+            result.Text = "0";
+        }
+
+        private void Operator (object sender, EventArgs e)
+        {
+
+        }
     }
 }
