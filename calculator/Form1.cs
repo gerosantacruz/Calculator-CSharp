@@ -36,9 +36,21 @@ namespace calculator
             {
                 result.Clear();
             }
-
+            opera_click = false;
             Button b = (Button)sender;
-            result.Text = result.Text + b.Text;
+
+            if(b.Text == ".")
+            {
+                if (!result.Text.Contains("."))
+                {
+                    result.Text = result.Text + b.Text;
+                }
+            }
+            else
+            {
+                result.Text = result.Text + b.Text;
+            }
+            
         }
 
         private void ButtonCE_Click(object sender, EventArgs e)
@@ -52,10 +64,12 @@ namespace calculator
             opera = b.Text;
             value = Double.Parse(result.Text);
             opera_click = true;
+            equation.Text = value + " " + opera;
         }
 
         private void Equal_button_Click(object sender, EventArgs e)
         {
+            equation.Text = "";
             switch(opera)
             {
                 case "+":
@@ -73,7 +87,7 @@ namespace calculator
                 default:
                     break;
             }
-            opera_click = false;
+            
         }
 
         private void CButton(object sender, EventArgs e)

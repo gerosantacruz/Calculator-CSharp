@@ -47,6 +47,7 @@
             this.ButtonC = new System.Windows.Forms.Button();
             this.ButtonCE = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.TextBox();
+            this.equation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -155,8 +156,9 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(65, 56);
             this.button10.TabIndex = 11;
-            this.button10.Text = ",";
+            this.button10.Text = ".";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.ButtonClick);
             // 
             // button11
             // 
@@ -249,7 +251,7 @@
             // result
             // 
             this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.result.Location = new System.Drawing.Point(12, 21);
+            this.result.Location = new System.Drawing.Point(12, 32);
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(343, 38);
             this.result.TabIndex = 19;
@@ -257,11 +259,21 @@
             this.result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.result.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
+            // equation
+            // 
+            this.equation.AutoSize = true;
+            this.equation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equation.Location = new System.Drawing.Point(21, 9);
+            this.equation.Name = "equation";
+            this.equation.Size = new System.Drawing.Size(0, 20);
+            this.equation.TabIndex = 20;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 343);
+            this.Controls.Add(this.equation);
             this.Controls.Add(this.result);
             this.Controls.Add(this.Equal_button);
             this.Controls.Add(this.ButtonC);
@@ -282,6 +294,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(387, 390);
+            this.MinimumSize = new System.Drawing.Size(387, 390);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -313,6 +327,7 @@
         private System.Windows.Forms.Button ButtonC;
         private System.Windows.Forms.Button ButtonCE;
         private System.Windows.Forms.TextBox result;
+        private System.Windows.Forms.Label equation;
     }
 }
 
