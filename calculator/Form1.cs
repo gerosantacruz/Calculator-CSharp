@@ -60,6 +60,7 @@ namespace calculator
 
         private void Operator(object sender, EventArgs e)
         {
+            //This equation ejecute one operation per time when one operator buuton eis pressed
             Button b = (Button)sender;
             if (value != 0)
             {
@@ -79,6 +80,7 @@ namespace calculator
 
         private void Equal_button_Click(object sender, EventArgs e)
         {
+            //ejecute the operation is tiped in the equation.
             equation.Text = "";
             switch(opera)
             {
