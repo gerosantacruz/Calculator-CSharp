@@ -61,10 +61,20 @@ namespace calculator
         private void Operator(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            opera = b.Text;
-            value = Double.Parse(result.Text);
-            opera_click = true;
-            equation.Text = value + " " + opera;
+            if (value != 0)
+            {
+                Equal_button.PerformClick();
+                opera_click = true;
+                opera = b.Text;
+                equation.Text = value + " " + opera;
+            } else {
+                opera = b.Text;
+                value = Double.Parse(result.Text);
+                opera_click = true;
+                equation.Text = value + " " + opera;
+            }
+
+
         }
 
         private void Equal_button_Click(object sender, EventArgs e)
@@ -87,7 +97,8 @@ namespace calculator
                 default:
                     break;
             }
-            
+            value = Int32.Parse(result.Text);
+            opera = "";
         }
 
         private void CButton(object sender, EventArgs e)
